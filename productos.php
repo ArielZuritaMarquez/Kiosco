@@ -26,7 +26,7 @@
                   <a class="bi bi-cart4 nav-link" aria-current="page" href="#">Mi Carrito</a>
                 </li>
                 <li class="nav-item">
-                  <a class="bi bi-person nav-link" href="perfil.html">Perfil</a>
+                  <a class="bi bi-person nav-link" href='<?php echo "$perfilLink" ?>'><?php echo "$perfilTxt" ?></a>
                 </li>
               </ul>
             </div>

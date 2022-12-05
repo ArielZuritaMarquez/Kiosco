@@ -11,17 +11,6 @@
 
   $prod3 = mysqli_query($conexion, "SELECT * from productos where id=3");
   $row3 = mysqli_fetch_array($prod3);
-
-  if ($userLog == false){
-    $perfilTxt = "Iniciar Sesión";
-  } else {
-    $perfilTxt = "Perfil";
-  }
-  if ($userLog == false){
-    $perfilLink = "login.html";
-  } else {
-    $perfilLink = "perfil.html";
-  }
 ?>
 
 <!doctype html>
