@@ -1,3 +1,7 @@
+<?php
+  include ("PHP/Querys.php");
+  include ("User/Usuarios.php");
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -23,7 +27,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="bi bi-cart4 nav-link" aria-current="page" href="#">Mi Carrito</a>
+                  <a class="bi bi-cart4 nav-link" aria-current="page" href='<?php echo "$perfilLink" ?>'>Mi Carrito</a>
                 </li>
                 <li class="nav-item">
                   <a class="bi bi-person nav-link" href='<?php echo "$perfilLink" ?>'><?php echo "$perfilTxt" ?></a>
@@ -35,35 +39,9 @@
       </nav>
       <div class="container" style="margin-top: 5rem; margin-bottom: 2rem">
         <div class="row mt-5" id="listaProductos">
-          <?php 
-
-          $conexion=mysqli_connect("localhost:3306", "root", "", "kiosco");
-
-          $registros = mysqli_query($conexion, "SELECT * from productos");
-
-          while($row = mysqli_fetch_array($registros)){ ?>
-
-            <div class="col-12">
-              <div class="card mb-3">
-                <div class="row g-0 d-flex justify-content-center">
-                  <div class="col-auto">
-                    <img src="<?php echo "$row[imagen]"?>.jpg" style="max-width: 200px" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col">
-                    <div class="card-body">
-                      <a href="productoIndividual.html" style="text-decoration: none;"><h5 class="card-title text-black"><?php echo "$row[nombre]"; ?></h5></a>
-                      <p class="card-text"><small class="text-muted"><?php echo "$row[precio]"; ?></small></p>
-                      <p class="card-text"><small class="text-muted"><?php echo "$row[cantidad] unidades"; ?></small></p>
-                      <form action="http://localhost/Kiosco/productoIndividual.php" method="get">
-                        <button class="btn btn-primary mt-3" type="submit" name="product" value="<?php echo "$row[id]"; ?>">Ver producto</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <?php }
-          mysqli_close($conexion);?>            
+        <?php
+          querysProd();
+        ?>      
         </div>
       </div>
     </div>

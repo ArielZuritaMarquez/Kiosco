@@ -38,7 +38,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="bi bi-cart4 nav-link" aria-current="page" href="carrito.html">Mi Carrito</a>
+                  <a class="bi bi-cart4 nav-link" aria-current="page" href='<?php echo "$perfilLink" ?>'>Mi Carrito</a>
                 </li>
                 <li class="nav-item">
                   <a class="bi bi-person nav-link" href='<?php echo "$perfilLink" ?>'><?php echo "$perfilTxt" ?></a>
@@ -79,7 +79,7 @@
             </a>
           </div>
           <div class="carousel-item">
-            <a href="http://localhost/Kiosco/productoIndividual.php?product=2">
+            <a href="http://localhost/Kiosco/productoIndividual.php?product=3">
               <div class="card d-flex justify-content-center flex-row">
                 <img src="<?php echo "$row3[imagen]"?>.jpg" class="card-img" style="width: 200px" alt="...">
                 <div class="card-img-overlay">
